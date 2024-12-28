@@ -5,14 +5,14 @@ const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 
 const app = express();
-const port = process.env.PORT || 5000;  // Change port to 7001 or any other unused port
+const port = process.env.PORT || 5000;  
 
-// MongoDB connection string
+
 const MONGO_URL = 'mongodb+srv://subasree:Subasree24@mydatabase.mz8ix.mongodb.net/?retryWrites=true&w=majority&appName=mydatabase';
 
-// Middleware
+
 app.use(bodyParser.json());
-app.use(cors()); // This will allow all origins, you can configure it more specifically if needed
+app.use(cors()); 
 
 
 mongoose.connect(MONGO_URL)
@@ -26,14 +26,14 @@ mongoose.connect(MONGO_URL)
 // Set up routes
 app.use('/api', userRoutes());  // Fixed this line
 
-app.get('/',(req,res)=>{
+app.get('/',(_req,res)=>{
   res.send('Welcome to ticketbooking app')
 })
 
-// Start the server
-app.listen(() => {
-  console.log('Server running on port ${port}');
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });
+
 
 
 
@@ -106,9 +106,9 @@ app.listen(() => {
 // });
  
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on http://localhost:${port}`);
+// });
 
 
 
