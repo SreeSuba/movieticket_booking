@@ -26,6 +26,10 @@ mongoose.connect(MONGO_URL)
 // Set up routes
 app.use('/api', userRoutes());  // Fixed this line
 
+app.get('/',(req,res)=>{
+  res.send('Welcome to ticketbooking app')
+})
+
 // Start the server
 app.listen(() => {
   console.log('Server running on port ${port}');
