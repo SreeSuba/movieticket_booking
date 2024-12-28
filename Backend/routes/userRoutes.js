@@ -3,14 +3,39 @@ const userController = require('../controllers/userController');
 
 const router = express.Router();
 
-module.exports = (db) => {
-  router.get('/bookings/get', userController.getAllBookings(db));
-  router.post('/bookings/add', userController.createBooking(db));
-  router.put('/bookings/update/:id', userController.updateBooking(db));
-  router.delete('/bookings/delete/:id', userController.deleteBooking(db));
+module.exports = () => {
+  router.get('/bookings/get', userController.getAllBookings);
+  router.post('/bookings/add', userController.createBooking);
+  router.put('/bookings/update/:id', userController.updateBooking);
+  router.delete('/bookings/delete/:id', userController.deleteBooking);
 
   return router;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+// const express = require('express');
+// const userController = require('../controllers/userController');
+
+// const router = express.Router();
+
+// module.exports = (db) => {
+//   router.get('/bookings/get', userController.getAllBookings(db));
+//   router.post('/bookings/add', userController.createBooking(db));
+//   router.put('/bookings/update/:id', userController.updateBooking(db));
+//   router.delete('/bookings/delete/:id', userController.deleteBooking(db));
+
+//   return router;
+// };
 
 
 

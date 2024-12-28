@@ -1,3 +1,22 @@
+const mongoose = require('mongoose');
+
+const bookingSchema = new mongoose.Schema({
+  movieName: { type: String, required: true },
+  time: { type: String, required: true },
+  seats: { type: Number, required: true },
+  namess: { type: String, required: true },
+  ph: { type: String, required: true },
+  email: { type: String, required: true },
+  payment: { type: String, required: true },
+}, { timestamps: true });
+
+const Booking = mongoose.model('Booking', bookingSchema);
+
+module.exports = Booking;
+
+
+
+
 // In this case, user.js is more of a structure for bookings.
 //  Since the database queries are handled directly in the controller, 
 // you can skip writing the model class.
